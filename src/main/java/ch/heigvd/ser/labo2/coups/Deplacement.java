@@ -48,8 +48,23 @@ public class Deplacement extends Coup {
     @Override
     public String notationPGNimplem() {
 
-        // TODO A implémenter (vous pouvez retirer le return null)
-        return null;
 
+        String coup = new String();
+
+        if(pieceDeplacee == TypePiece.Pion){
+            if(elimination != null){
+                coup += depart.notationPGN();
+                coup += "x";
+            }
+        } else {
+            coup += pieceDeplacee.notationPGN();
+            if(elimination != null){
+                coup += "x";
+            }
+        }
+
+        coup += arrivee.notationPGN();
+
+        return coup;
     }
 }
