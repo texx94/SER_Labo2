@@ -61,7 +61,7 @@ public class Deplacement extends Coup {
             if(elimination != null){
                 coup += "x";
             }
-            else if(arrivee != null){ //<- condition pas correcte
+            else if(depart != null){ //<- condition pas correcte
                 coup += depart.notationPGN();
             }
 
