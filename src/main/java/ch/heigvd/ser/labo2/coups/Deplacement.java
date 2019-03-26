@@ -61,14 +61,19 @@ public class Deplacement extends Coup {
             if(elimination != null){
                 coup += "x";
             }
-            else if(depart != null){ //<- condition pas correcte
+            else if(depart != null){
                 coup += depart.notationPGN();
             }
 
         }
 
+
         coup += arrivee.notationPGN();
 
+        if(pieceDeplacee == TypePiece.Pion && promotion != null){
+            coup += "=" + promotion.notationPGN();
+        }
+        
         return coup;
     }
 }
