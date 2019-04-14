@@ -1,3 +1,11 @@
+/**
+ * SER - LABO 02
+ * Authors: Edoardo Carpita, Loris Gilliand, Nicodème Stalder
+ * Date: 14-04-2019
+ * File: Deplacement.java
+ *
+ */
+
 package ch.heigvd.ser.labo2.coups;
 
 /**
@@ -73,7 +81,7 @@ public class Deplacement extends Coup {
         if(pieceDeplacee == TypePiece.Pion && promotion != null){
             coup += "=" + promotion.notationPGN();
         }
-        
+
         return coup;
     }
 }

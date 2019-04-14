@@ -1,3 +1,11 @@
+/**
+ * SER - LABO 02
+ * Authors: Edoardo Carpita, Loris Gilliand, Nicodème Stalder
+ * Date: 14-04-2019
+ * File: Parser.java
+ *
+ */
+
 package ch.heigvd.ser.labo2;
 
 import ch.heigvd.ser.labo2.coups.*;
@@ -12,8 +20,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+
 public class Parser {
 
+    // string contentant le format desiré du fichier de sortie
+    private static final String FILEFORMAT =  ".pgn";
+
+    /**
+     * Methode principale pour parser un document passé en parametre
+     * @param filePath parcorus du fichier à parser
+     */
     public void parse(String filePath) {
         try {
             // création du lecteur de fichier et du fichier
@@ -50,7 +66,7 @@ public class Parser {
                     List<Element> listCoup = coups.getChildren("coup");
 
                     // crée un nouvel objet d'ecriture dans le fichier crée a la volée
-                    pw = new PrintWriter(new FileWriter("partie" + compteurPartie++ + ".pgn"));
+                    pw = new PrintWriter(new FileWriter("partie" + compteurPartie++ + FILEFORMAT));
 
                     // permet d'obtenir un comportement different pour la première ligne (pas de retour à la ligne AVANT)
 					boolean premierCoup = true;
